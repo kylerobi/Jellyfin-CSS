@@ -1,0 +1,466 @@
+/*Make the cast cards smaller*/
+#castContent .card.overflowPortraitCard.personCard.card-hoverable.card-withuserdata {width: 12% !important; font-size: 90% !important;}
+#castContent .card.overflowPortraitCard.personCard.card-withuserdata {width: 12% !important; font-size: 90% !important;}
+#castContect .cardTextCentered {width: 11% !important; font-size: 90% !important;}
+@import url("https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/round.css");
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select-withcolor {
+  border-color: #ffffff !important;
+}
+/**********/
+
+/*Theme Stuff*/
+.skinHeader {
+  color:rgba(9, 107, 73, 0.855);
+}
+/**********/
+
+/*Adjust scrollbar color*/
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #096b48 #000000;
+}
+/**********/
+
+/*Adjust color of general text*/
+.dashboardGeneralForm {
+  color: #096b48;
+}
+/**********/
+
+/* Increase size of Jellyfin logo */
+.layout-desktop .pageTitleWithLogo {
+    margin-left: 10px !important;
+    height: 100px !important;
+}
+.layout-mobile .pageTitleWithLogo {
+    margin-left: 10px !important;
+    height: 50px !important;
+}
+/*adjust .layout-tv as well if you use that*/
+/**********/
+
+/*Adjust color or right header items*/
+.headerRight {
+  color: #096b48;
+}
+/**********/
+
+/* hamburger open menu / Left menu */
+.mainDrawer-scrollContainer {
+  /*color: #096b48;*/
+  color: #ffffffac;
+}
+/**********/
+
+/*Adjust top bar color/transparency*/
+.skinHeader-withBackground {background-color: #20202000 !important;}
+/**********/
+
+/*Partially transparent side bar with color*/
+div.mainDrawer {background-color: rgba(9, 107, 73, 0.855) !important;}
+/**********/
+
+/* Adjust both "size-adjust" and "size" to modify size */
+.headerTabs.sectionTabs {
+  text-size-adjust: 120%;
+  font-size: 120%;
+}
+.pageTitle {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.emby-tab-button {
+  padding: 1.75em 1.7em;
+}
+/**********/
+
+/*Background blur/image */
+.backgroundContainer {
+  background-color: rgba(0, 0, 0, 0.73);
+  /*background-image: url('https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg');*/
+  filter: blur(0px);
+  background-size: cover;
+}
+/**********/
+
+/*Show external links*/
+.layout-mobile .itemExternalLinks {
+  display: block !important;
+}
+/**********/
+
+/*Change Played Indicator color*/
+.playedIndicator {
+  background: #5dd000;
+}
+/**********/
+
+/*If the logo is present on the details page of an item, hide the items' title*/
+#itemDetailPage .itemName.infoText.parentNameLast &gt; bdi:nth-child(1) {display: none;}
+.hide+.detailPageWrapperContainer .itemName &gt; bdi:nth-child(1) {display: block !important;}
+/*Do the same for the single episodes link back title*/
+#itemDetailPage .parentName &gt; bdi:nth-child(1) {display: none;}
+.hide+.parentName &gt; bdi:nth-child(1) {display: block !important;}
+/**********/
+
+
+/*Custom login page of awesome*/
+/*Hide the top bar when the login page is visible
+body:has(#loginPage:not(.hide)) .skinHeader {
+    display: none !important;
+}*/
+/*Show the top bar when the login page is hidden or absent*/
+body:not(:has(#loginPage:not(.hide))) .skinHeader {
+    display: flex !important;
+}
+#loginPage {
+  background-image: url('/Branding/Splashscreen?format=jpg&foregroundLayer=20.0');
+  background-position: top left;
+  background-size: 200%;
+  background-attachment: fixed;
+  animation: backgroundAnimation 150s infinite alternate;
+  z-index: 2;
+}
+@keyframes backgroundAnimation {
+  0% {
+    background-position: top left;
+  }
+  25% {
+    background-position: bottom right;
+  }
+  50% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+.skinHeader.semiTransparent.noHeaderRight {
+  background: transparent !important;
+}
+div#loginPage {
+  margin-top: 0 !important;
+  overflow: hidden scroll;
+}
+#loginPage h1::after {
+  content: "Sign In";
+  font-size: 32px;
+}
+#loginPage h1 {
+  font-weight: 700;
+  font-size: 0;
+  margin-bottom: 21.44px;
+  margin-top: 32px !important;
+  text-align: left;
+}
+.inputContainer {
+  margin-bottom: 1.8em;
+  margin-top: 1.8em;
+}
+#loginPage .padded-left.padded-right.padded-bottom-page {
+    background: #000000bf;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    margin: 21px;
+    position: absolute;
+    border-radius: 10px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 3em !important;
+}
+#loginPage .readOnlyContent {
+  padding: 0 !important;
+  width: 100% !important;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.manualLoginForm {
+  height: 100%;
+  width: 100%;
+}
+#loginPage .inputContainer {
+  background: #333;
+  border-radius: var(--rounding);
+  height: 4em;
+  position: relative;
+}
+#loginPage .inputLabel.inputLabelFocused,
+#loginPage .inputLabel:not(.inputLabel-float) {
+  font-size: 0.8em;
+  left: 4%;
+  top: 4%;
+  transform: none;
+}
+.visualLoginForm {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#divUsers {
+  flex-flow: revert;
+  overflow: scroll visible;
+  justify-content: flex-start;
+}
+#loginPage .emby-input {
+  height: 100%;
+  border: none;
+  background: transparent !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none !important;
+  padding: 4% !important;
+  font-size: 1.1em;
+  border: none !important;
+}
+#loginPage .inputLabel {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  font-weight: 300;
+  transition: 0.2s ease;
+  color: #096b48;
+}
+#loginPage .inputContainer:focus,
+#loginPage .inputContainer:focus-within {
+  background: #096b48;
+}
+/**********/
+
+
+/*****pause screen*****/
+#overlay-disc {
+  position: absolute !important;  
+  top: calc(50vh - (26vw / 2)) !important;
+  right: 7% !important;
+  width: 26vw !important;
+  height: auto !important;
+  display: block !important;
+  animation: 30s linear infinite spin !important;
+  z-index: -1 !important;
+  filter: brightness(80%) !important;
+}
+#overlay-plot {
+  top: 61% !important;
+  max-width: 54% !important;
+  height: 50vh !important;
+  display: block !important;
+  right: 41vw !important;
+  position: absolute !important;
+  font-size: 21px !important;
+}
+#overlay-logo {
+    position: absolute !important;
+    max-width: 50vw !important; /* Max width is half the viewport width */
+    max-height: 23vh !important; /* Limits the height */
+    width: auto !important; /* Ensures no forced stretching */
+    height: auto !important; /* Preserves aspect ratio */
+    top: 25vh !important; /* Places it at a quarter of the viewport height */
+    left: 19vw !important; /* Centers within the left half */
+    transform: translateX(-50%) !important; /* Ensures true centering */
+    display: block !important;
+	margin-left: 12vw !important;
+    object-fit: contain; /* Prevents cropping/stretching */
+}
+/**********/
+
+
+
+/*Size episode preview images in a more compact way*/
+.listItemImageButton-icon {padding: 0;}
+.secondary.listItem-overview.listItemBodyText {height: 61px; margin: 0;}
+.listItemImageButton {margin: auto; font-size: 1.6em !important;}
+@media all and (min-width: 100em){
+    .listItemImage.listItemImage-large.itemAction.lazy {height: 110px;}
+    .listItem-content {height: 115px;}
+    .secondary.listItem-overview.listItemBodyText {height: 4em; margin: 0;}
+}
+@media all and (max-width: 100em){
+    .listItemImage.listItemImage-large.itemAction.lazy {height: 80px;}
+    .listItem-content {height: 85px;}
+    .secondary.listItem-overview.listItemBodyText {height: 2.5em; margin: 0;}
+}
+/**********/
+
+/* Rounded cards */
+.cardContent,
+.cardPadder,
+.cardOverlayContainer,
+.blurhash-canvas,
+.dialog,
+.itemSelectionPanel,
+.nowPlayingPageImage {
+    border-radius: var(--rounded-cards) !important;
+}
+/* Rounded selection menu */
+.itemSelectionPanel {
+    border: 2px solid var(--primary-accent-color) !important;
+}
+.itemSelectionPanel .checkboxOutline {
+    margin: 7px !important;
+}
+/**********/
+
+
+/* Rounded left drawer buttons */
+.navMenuOption,
+.navMenuOption:hover,
+.navMenuOption-selected {
+    border-radius: 100px !important;
+    width: 85% !important;
+    margin: auto !important;
+    text-align: center !important;
+    height: 45px !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+}
+.navMenuOption:hover:not(.navMenuOption-selected) {
+    background-color: rgba(44, 44, 44, 0.7);
+}
+/* Center icons and text and shift to the left */
+.navMenuOptionIcon,
+.navMenuOptionText {
+    position: inherit !important;
+    left: -10% !important;
+    margin-top: 0 !important;
+}
+/* Fix for header buttons */
+.layout-desktop .emby-button-foreground {
+    top: -9px !important;
+}
+.layout-tv .emby-button-foreground {
+    top: -14px !important;
+}
+/**********/
+
+
+
+
+
+
+/* Rounded header buttons*/
+.headerTabs,
+.headerRight {
+    background-color: var(--primary-background-transparent) !important;
+    border-radius: 50px !important;
+    backdrop-filter: blur(var(--blur)) !important;
+}
+.layout-desktop .headerTabs,
+.layout-tv .headerTabs {
+    margin-bottom: 10px !important;
+}
+.layout-desktop .headerTabs {
+    margin-left: 160px !important;
+    margin-top: -58px !important;
+}
+/* Button height */
+.headerRight,
+.emby-tab-button {
+    height: 45px !important;
+}
+/* Lower header and add padding to right buttons */
+.layout-desktop .headerRight {
+    padding: 0px 5px !important;
+}
+.layout-tv .headerRight {
+    padding: 20px 10px !important;
+}
+/* Move left header back up */
+.layout-desktop .headerLeft
+.layout-tv .headerLeft {
+    position: relative !important;
+    top: -17px !important;
+}
+/***************/
+
+/* Mobile fixes */
+/*
+.layout-mobile .sectionTabs {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+.layout-mobile .emby-button-foreground {
+    top: -2px !important;
+}
+.layout-mobile .skinHeader {
+    transition: .1s !important;
+}
+.layout-mobile .mainDrawer {
+    background: var(--secondary-background-color) !important;
+}
+.layout-mobile .headroom--unpinned {
+    transform: none;
+}
+.layout-mobile .headroom--unpinned:has(.headerTabs.sectionTabs:not(.hide))  {
+    transform: translateY(-50%);
+}
+.layout-mobile .headroom--not-top {
+    background: var(--primary-background-transparent) !important;
+    backdrop-filter: blur(var(--blur)) !important;
+}
+.layout-mobile .headroom--not-top .headerRight {
+    background: none !important;
+}
+.layout-mobile .headroom--top,
+.layout-mobile .headroom--not-top:has(.headerTabs.sectionTabs:not(.hide)) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+.layout-mobile .headroom--top .headerRight ,
+.layout-mobile .headroom--not-top:has(.headerTabs.sectionTabs:not(.hide)) .headerRight {
+    background: var(--primary-background-transparent) !important;
+}
+@media (max-width: 380px) {
+    .layout-mobile .pageTitle:not(.pageTitleWithLogo):not(:empty) {
+        position: absolute !important;
+        margin-left: 50% !important;
+        transform: translate(-50%, 0) !important;
+        top: 60px !important;
+    }
+    .layout-mobile .headerTop:has(.pageTitle:not(.pageTitleWithLogo):not(:empty)) {
+        -webkit-align-items: start !important;
+        align-items: start !important;
+    }
+    .layout-mobile .skinHeader:has(.pageTitle:not(.pageTitleWithLogo):not(:empty)) {
+        height: 110px !important;
+    }
+    .layout-mobile .skinHeader:has(.pageTitle:not(.pageTitleWithLogo):not(:empty)):has(.sectionTabs:not(.hide)) {
+        height: 140px !important;
+    }
+    .layout-mobile .libraryPage:not(.noSecondaryNavPage) {
+        padding-top: 9.5em !important;
+    }
+    .layout-mobile .headroom--unpinned:has(.headerTabs.sectionTabs:not(.hide)):has(.pageTitle:not(.pageTitleWithLogo):not(:empty)) {
+        transform: translateY(-60%);
+    }
+}
+*********/
+
+/*
+* Add card around top-right buttons*
+.mainDetailButtons {
+    background: var(--primary-background-transparent) !important;
+    border-radius: 100px !important;
+    backdrop-filter: blur(var(--blur)) !important;
+}
+* Background for top left buttons *
+.layout-desktop body:not(.hideMainDrawer) .headerLeft:not(.libraryDocument:has(.videoPlayerContainer) .headerLeft) {
+    padding: 2px !important;
+    top: -3px !important;
+    background-color: var(--primary-background-transparent) !important;
+    border-radius: 50px !important;
+    backdrop-filter: blur(var(--blur)) !important;
+}
+*/
